@@ -8,6 +8,16 @@ is a Greek word meaning “character” that is used to describe the guiding bel
 
 Please check our older dataset as well: https://intelligence.csd.auth.gr/topics/hate-speech-detection/
 
+## EthOS Integration
+This repository includes EthOS (Ethical Operating System) integration for advanced system monitoring and operational protocols. See:
+- [ETHOS_INTEGRATION.md](ETHOS_INTEGRATION.md) - Comprehensive documentation of metrics, formulas, and protocols
+- [ethos_operations.py](ethos_operations.py) - Python implementation of the EthOS mathematical framework
+
+Run the EthOS operations script:
+```bash
+python ethos_operations.py
+```
+
 ## Reference
 Please if you use this dataset in your research cite out preprint paper: [ETHOS: a multi-label hate speech detection dataset](https://rdcu.be/cEoQn)
 ```
