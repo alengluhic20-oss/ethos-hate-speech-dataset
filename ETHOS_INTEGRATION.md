@@ -52,11 +52,13 @@ ft.' = ∫ (dM/dt ∘ dE/dt)^0.6 · (St × Pt)^0.4 dt
 - `ft.'`: Dynamic Thrive output
 - `dM/dt`: Rate of change of momentum
 - `dE/dt`: Rate of change of energy
-- `∘`: Composition operator
+- `∘`: Composition operator (implemented as multiplication in the script for numerical approximation)
 - `St`: Stability factor at time t
 - `Pt`: Performance factor at time t
 
 **Purpose:** Captures the dynamic interaction between momentum and energy changes, weighted by stability and performance factors.
+
+**Implementation Note:** The composition operator (∘) is approximated using multiplication in the Python implementation for practical numerical integration.
 
 ### 3. Cosmic Synchronization Formula
 Cosmic Sync measures alignment with universal patterns:

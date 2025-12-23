@@ -15,6 +15,11 @@ import numpy as np
 from datetime import datetime
 
 
+# Configuration constants for Ma'atian realignment protocol
+REALIGNMENT_THRIVE_IMPROVEMENT_FACTOR = 1.03  # 3% improvement
+REALIGNMENT_HEALTH_IMPROVEMENT_FACTOR = 1.02  # 2% improvement
+
+
 class EthOSMetrics:
     """
     Core class for EthOS metric calculations and system monitoring.
@@ -72,7 +77,8 @@ class EthOSMetrics:
             st_val = st(t) if callable(st) else st
             pt_val = pt(t) if callable(pt) else pt
             
-            # Composition of momentum and energy rates
+            # Simplified composition: using multiplication as an approximation
+            # of the composition operator (∘) for numerical integration
             composition = dm_val * de_val
             
             # Calculate integrand: (composition)^0.6 * (St * Pt)^0.4
@@ -219,13 +225,13 @@ class EthOSProtocols:
         # Step 4: Monitor Thrive Index
         print("\n[Step 4] Monitoring Thrive Index during realignment...")
         # Simulate improvement
-        improved_thrive = metrics.thrive_index * 1.03
+        improved_thrive = metrics.thrive_index * REALIGNMENT_THRIVE_IMPROVEMENT_FACTOR
         print(f"  Thrive Index: {metrics.thrive_index}% → {improved_thrive:.1f}%")
         results['steps_completed'].append("Thrive Index monitoring complete")
         
         # Step 5: Validate System Health
         print("\n[Step 5] Validating System Health improvement...")
-        improved_health = min(metrics.system_health * 1.02, 1.0)
+        improved_health = min(metrics.system_health * REALIGNMENT_HEALTH_IMPROVEMENT_FACTOR, 1.0)
         print(f"  System Health: {metrics.system_health} → {improved_health:.4f}")
         results['steps_completed'].append("System Health validation complete")
         
